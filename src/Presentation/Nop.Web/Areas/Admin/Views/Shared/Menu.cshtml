@@ -6,34 +6,34 @@
 @inject IXmlSiteMap siteMap;
 
 <ul class="nav nav-pills nav-sidebar flex-column nav-legacy" data-widget="treeview" role="menu">
-    @{
-        var customer = await workContext.GetCurrentCustomerAsync();
+	@{
+		var customer = await workContext.GetCurrentCustomerAsync();
 
         //load sitemap
-        await siteMap.LoadFromAsync("~/Areas/Admin/sitemap.config");
+		await siteMap.LoadFromAsync("~/Areas/Admin/sitemap.config");
 
         //standard (default) items
-        var rootNode = siteMap.RootNode;
+		var rootNode = siteMap.RootNode;
 
         //plugins
-        var adminMenuPlugins = await adminMenuPluginManager.LoadAllPluginsAsync(customer);
-        foreach (var adminMenuPlugin in adminMenuPlugins)
-        {
-            await adminMenuPlugin.ManageSiteMapAsync(rootNode);
-        }
+		var adminMenuPlugins = await adminMenuPluginManager.LoadAllPluginsAsync(customer);
+		foreach (var adminMenuPlugin in adminMenuPlugins)
+		{
+			await adminMenuPlugin.ManageSiteMapAsync(rootNode);
+		}
 
         //"Plugins" menu item should be visible when it has some child nodes
-        var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Third party plugins");
-        if (pluginNode?.Visible ?? false)
-        {
-            pluginNode.Visible = pluginNode.ChildNodes.Any(x => x.Visible) 
-                &&  await permissionService.AuthorizeAsync(StandardPermissionProvider.ManagePlugins, customer);
-        }
+		var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Third party plugins");
+		if (pluginNode?.Visible ?? false)
+		{
+			pluginNode.Visible = pluginNode.ChildNodes.Any(x => x.Visible) 
+				&&  await permissionService.AuthorizeAsync(StandardPermissionProvider.ManagePlugins, customer);
+		}
 
         //display menu items
-        foreach (var item in rootNode.ChildNodes.Where(x => x.Visible))
-        {
-            @await Html.PartialAsync("_MenuItem", item)
+		foreach (var item in rootNode.ChildNodes.Where(x => x.Visible))
+		{
+			@await Html.PartialAsync("_MenuItem", item)
         }
     }
 </ul>

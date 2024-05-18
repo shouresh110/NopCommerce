@@ -381,6 +381,9 @@ public partial record ProductModel : BaseNopEntityModel,
     [UIHint("DateTimeNullable")]
     public DateTime? AvailableEndDateTimeUtc { get; set; }
 
+    [NopResourceDisplayName("Admin.Catalog.Products.Fields.UpdatedOnUtc")]
+    public DateTime UpdatedOnUtc { get; set; }
+
     [NopResourceDisplayName("Admin.Catalog.Products.Fields.DisplayOrder")]
     public int DisplayOrder { get; set; }
 

@@ -3381,6 +3381,9 @@
   <LocaleResource Name="Admin.Catalog.Products.Fields.UnlimitedDownloads.Hint">
     <Value>When a customer purchases a download product, they can download the item unlimited number of times.</Value>
   </LocaleResource>
+    <LocaleResource Name="Admin.Catalog.Products.Fields.UpdatedOnUtc">
+        <Value>Last updated date</Value>
+    </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.UseMultipleWarehouses">
     <Value>Multiple warehouses</Value>
   </LocaleResource>
