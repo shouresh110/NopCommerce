@@ -38,6 +38,13 @@ public partial interface ILogger
     Task ClearLogAsync(DateTime? olderThan = null);
 
     /// <summary>
+    /// DateTime Now Logging
+    /// </summary>
+    /// <param name="dateTime">Logging DateTime Now Per 10 Minute</param>
+    /// <returns>A task that represents the asynchronous operation</returns>
+    Task DateTimeLogAsync(DateTime dateTime, Customer customer);
+
+    /// <summary>
     /// Gets all log items
     /// </summary>
     /// <param name="fromUtc">Log item creation from; null to load all records</param>

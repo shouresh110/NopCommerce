@@ -133,6 +133,16 @@ public partial class DefaultLogger : ILogger
     }
 
     /// <summary>
+    /// DateTime Now Logging
+    /// </summary>
+    /// <param name="dateTime">Logging DateTime Now Per 10 Minute</param>
+    /// <returns>A task that represents the asynchronous operation</returns>
+    public virtual async Task DateTimeLogAsync(DateTime dateTime, Customer customer)
+    {
+        await _logRepository.InsertAsync(PrepareLog(LogLevel.Information, "DateTime logging", dateTime.ToString(), customer), false);
+    }
+
+    /// <summary>
     /// Gets all log items
     /// </summary>
     /// <param name="fromUtc">Log item creation from; null to load all records</param>
@@ -228,7 +238,7 @@ public partial class DefaultLogger : ILogger
         //check ignore word/phrase list?
         if (IgnoreLog(shortMessage) || IgnoreLog(fullMessage))
             return;
-        
+
         _logRepository.Insert(PrepareLog(logLevel, shortMessage, fullMessage, customer), false);
     }
 
