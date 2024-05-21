@@ -20076,6 +20076,15 @@
   <LocaleResource Name="Vendors.ApplyAccount.Name.Required">
     <Value>Vendor name is required.</Value>
   </LocaleResource>
+    <LocaleResource Name="Vendors.ApplyAccount.StoreName">
+        <Value>Store name</Value>
+    </LocaleResource>
+    <LocaleResource Name="Vendors.ApplyAccount.StoreName.Hint">
+        <Value>Enter store name.</Value>
+    </LocaleResource>
+    <LocaleResource Name="Vendors.ApplyAccount.StoreName.Required">
+        <Value>Store name is required.</Value>
+    </LocaleResource>
   <LocaleResource Name="Vendors.ApplyAccount.Picture">
     <Value>Picture</Value>
   </LocaleResource>

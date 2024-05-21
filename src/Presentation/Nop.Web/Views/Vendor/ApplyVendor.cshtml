@@ -33,6 +33,12 @@
                             <nop-required />
                             <span asp-validation-for="Name"></span>
                         </div>
+						<div class="inputs">
+							<label asp-for="StoreName" asp-postfix=":"></label>
+							<input asp-for="StoreName" class="name" placeholder="@T("Vendors.ApplyAccount.StoreName.Hint")" />
+							<nop-required />
+							<span asp-validation-for="StoreName"></span>
+						</div>
                         <div class="inputs">
                             <label asp-for="Email" asp-postfix=":"></label>
                             <input asp-for="Email" class="name" placeholder="@T("Vendors.ApplyAccount.Email.Hint")" />

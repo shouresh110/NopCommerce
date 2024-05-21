@@ -14,6 +14,9 @@ public partial record ApplyVendorModel : BaseNopModel
     [NopResourceDisplayName("Vendors.ApplyAccount.Name")]
     public string Name { get; set; }
 
+    [NopResourceDisplayName("Vendors.ApplyAccount.StoreName")]
+    public string StoreName { get; set; }
+
     [DataType(DataType.EmailAddress)]
     [NopResourceDisplayName("Vendors.ApplyAccount.Email")]
     public string Email { get; set; }

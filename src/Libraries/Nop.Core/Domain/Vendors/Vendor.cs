@@ -15,6 +15,11 @@ public partial class Vendor : BaseEntity, ILocalizedEntity, ISlugSupported, ISof
     public string Name { get; set; }
 
     /// <summary>
+    /// Gets or sets the store name
+    /// </summary>
+    public string StoreName { get; set; }
+
+    /// <summary>
     /// Gets or sets the email
     /// </summary>
     public string Email { get; set; }
