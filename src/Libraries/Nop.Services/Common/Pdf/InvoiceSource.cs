@@ -20,6 +20,10 @@ public partial class InvoiceSource : DocumentSource
     #endregion
 
     #region Properties
+    /// <summary>
+    /// Gets or sets My FullName
+    /// </summary>
+    public string FullName { get; set; }
 
     /// <summary>
     /// Gets or sets the logo binary
@@ -42,6 +46,7 @@ public partial class InvoiceSource : DocumentSource
     /// Gets or sets store location
     /// </summary>
     public string StoreUrl { get; set; }
+
 
     /// <summary>
     /// Gets or sets a collection of order items

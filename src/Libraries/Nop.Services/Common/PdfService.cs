@@ -700,6 +700,7 @@ public partial class PdfService : IPdfService
 
         var source = new InvoiceSource()
         {
+            FullName = "Shoresh Mahmoudi",
             StoreUrl = orderStore.Url?.Trim('/'),
             Language = language,
             FontFamily = pdfSettingsByStore.FontFamily,

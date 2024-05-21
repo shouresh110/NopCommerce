@@ -106,6 +106,7 @@ public partial class InvoiceDocument : PdfDocument<InvoiceSource>
         {
             row.RelativeItem().Column(column =>
             {
+                column.Item().Text(t => ComposeField(t, Source, x => x.FullName));
                 column.Item().Text(t => ComposeField(t, Source, x => x.OrderNumberText, delimiter: "# "));
                 column.Item().Hyperlink(Source.StoreUrl).Text(Source.StoreUrl);
                 column.Item().Text(t =>
